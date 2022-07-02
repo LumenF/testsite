@@ -1,0 +1,22 @@
+{% extends 'html/base.html' %}
+{% block title %}Устройства{% endblock %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+
+    <div class="product-item">
+        {% for device in devices %}
+        <img src="{{STATIC_URL}} {{device.image.url}}">
+        <div class="product-list">
+            <h3>{{device.name}}</h3>
+              <span class="price">От 1999</span>
+              <a href="{% url 'menu-detail' category=device.id %}" class="button">Посмотреть</a>
+        </div>
+            {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

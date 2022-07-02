@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8mb4">
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css"/>
+    <title>{% block title %}TuneApple{% endblock %}</title>
+</head>
+
+<body>
+
+{% block content %}
+
+{% endblock %}
+<section class="sticky">
+<div class="header">
+  <div class="header-right">
+    <a class="active" href="{% url 'menu-main'%}">Главная</a>
+    {% for category in categories%}
+        <a href="{% url 'menu-device' device=category.id %}">{{category.name}}</a>
+    {% endfor %}
+  </div>
+</div>
+</section>
+</body>
+
+</html>
